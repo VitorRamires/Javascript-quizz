@@ -1,34 +1,29 @@
 import { DATA_QUESTIONS } from "../data/dataQuestions";
+import { QuestionBoardStyled } from "../style/question-panel";
 
 interface Questions {
   question: string;
   id: number;
   options: string[];
-  questionIndicator: string;
 }
 
 export function Questions() {
   return (
-    <div className="question_board">
+    <QuestionBoardStyled>
       {DATA_QUESTIONS.map(
-        ({ question, id, options, questionIndicator }: Questions) => (
+        ({ question, id, options }: Questions) => (
           <div className="question" key={id}>
             <h3 key={id}>{question}</h3>
 
-            {options.map((option) => (
-              <label htmlFor={option}>
+            {options.map((option, index) => (
+              <label key={index} className="option-label">
+                <input type="radio" value={option} name={`question-${id}`} />
                 {option}
-                <input
-                  type="radio"
-                  id={option}
-                  name={questionIndicator}
-                  value={option}
-                />
               </label>
             ))}
           </div>
         ),
       )}
-    </div>
+    </QuestionBoardStyled>
   );
 }

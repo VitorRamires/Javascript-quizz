@@ -1,4 +1,4 @@
-import { MainPainelStyled } from "../style/main-painel";
+import { MainPainelStyled } from "../style/question-panel";
 import { Questions } from "./questions";
 
 export function MainPainel() {
@@ -6,6 +6,7 @@ export function MainPainel() {
     <MainPainelStyled>
       <h2>Javascript Quizz!</h2>
       <Questions />
+      <button>Responder</button>
     </MainPainelStyled>
   );
 }
