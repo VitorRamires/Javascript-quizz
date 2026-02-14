@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { DATA_QUESTIONS } from "../data/dataQuestions";
 import { QuestionCounterContext } from "../store/questionCounter";
 import { QuestionBoardStyled, Question } from "../style/question-panel";
+import { AnswerStorageContext } from "../store/answerStorage";
 
 interface Questions {
   question: string;
@@ -10,10 +11,10 @@ interface Questions {
 }
 
 export function Questions() {
-  
-
   const questionCounter = useContext(QuestionCounterContext);
+  const answers = useContext(AnswerStorageContext)
 
+  // ao clicar na opçao, adicionar a resposta e verificar se está correta 
 
   return (
     <QuestionBoardStyled>
