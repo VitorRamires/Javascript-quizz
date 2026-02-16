@@ -2,24 +2,24 @@ import type { Dispatch, SetStateAction } from "react";
 
 export interface QuestionType {
   question: string;
-  id: number;
-  options: string[];
+  questionID: number;
+  answerOptions: string[];
   correctAnswer: number;
 }
 
-export interface AnswersType {
-  questionID: number;
-  selectedAnwser: string;
+
+export interface AnswerInfo {
+  choosedOption: number;
+  isCorrect: boolean;
+  question: string;
 }
+
+
+export type AnswerType = Record<number, AnswerInfo>;
 
 export interface AnswerStorageContextType {
-  setAnswers: Dispatch<SetStateAction<AnswersType[]>>;
-}
-
-type TemporalyAnswer = Record<number, string>;
-
-export interface TemporalyAnswerType {
-  setTemporalyAnswer: Dispatch<SetStateAction<TemporalyAnswer>>;
+  answers: AnswerType;
+  setAnswers: Dispatch<SetStateAction<AnswerType>>;
 }
 
 export interface BgInterface {

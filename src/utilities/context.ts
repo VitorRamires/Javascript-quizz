@@ -1,2 +1,7 @@
 import { createContext } from "react";
-export const AnswerStorageContext = createContext({});
+import type { AnswerStorageContextType } from "../types/types";
+
+export const AnswerStorageContext = createContext<AnswerStorageContextType>({
+  answers: {},
+  setAnswers: () => {},
+});

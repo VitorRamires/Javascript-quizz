@@ -1,12 +1,11 @@
 import { useState } from "react";
 import type { ReactNode } from "react";
 import { AnswerStorageContext } from "../utilities/context";
+import type { AnswerType } from "../types/types";
 
 export function AnswerStorageProvider({ children }: { children: ReactNode }) {
-  const [awnsers, setAnswers] = useState([{}]);
-  const [temporalyAwnser, setTemporalyAnswer] = useState([{}]);
-
-  const value = { awnsers, setAnswers, temporalyAwnser, setTemporalyAnswer };
+   const [answers, setAnswers] = useState<AnswerType>({});
+  const value = { answers, setAnswers };
 
   return (
     <AnswerStorageContext.Provider value={value}>

@@ -18,7 +18,7 @@ export const QuestionBoardStyled = styled.div`
   width: 100%;
 `;
 
-export const Question = styled.div`
+export const QuestionStyled = styled.div`
   .option-label {
     display: block;
     width: 100%;

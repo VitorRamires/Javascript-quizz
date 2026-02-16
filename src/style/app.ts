@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import type { BgInterface } from "../App";
+import type { BgInterface } from "../types/types";
 
 export const View = styled.div<BgInterface>`
   width: 100%;
