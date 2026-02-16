@@ -1,7 +1,7 @@
 export const DATA_QUESTIONS = [
   {
     questionID: 0,
-    question: "O que é JavaScript?",
+    questionDescription: "O que é JavaScript?",
     answerOptions: [
       "Uma biblioteca de Java para desenvolvimento web",
       "Uma linguagem de programação interpretada, de alto nível, orientada a objetos e executada no navegador",
@@ -12,7 +12,7 @@ export const DATA_QUESTIONS = [
   },
   {
     questionID: 1,
-    question: "Qual a diferença entre == e === em JavaScript?",
+    questionDescription: "Qual a diferença entre == e === em JavaScript?",
     answerOptions: [
       "Não há diferença, ambos fazem a mesma coisa",
       "== é mais rápquestionIDo que ===",
@@ -23,7 +23,7 @@ export const DATA_QUESTIONS = [
   },
   {
     questionID: 2,
-    question: "Como declarar uma função em JavaScript?",
+    questionDescription: "Como declarar uma função em JavaScript?",
     answerOptions: [
       "func minhaFuncao() {}",
       "def minhaFuncao() {}",
@@ -35,7 +35,7 @@ export const DATA_QUESTIONS = [
 
   {
     questionID: 3,
-    question: "O que é o 'this' em JavaScript?",
+    questionDescription: "O que é o 'this' em JavaScript?",
     answerOptions: [
       "Uma referência ao contexto de execução atual, que depende de como a função foi chamada",
       "Uma palavra reservada que sempre aponta para o objeto window",
@@ -46,7 +46,7 @@ export const DATA_QUESTIONS = [
   },
   {
     questionID: 4,
-    question: "O que são Promises em JavaScript?",
+    questionDescription: "O que são Promises em JavaScript?",
     answerOptions: [
       "Funções que garantem a execução de código",
       "Objetos que representam a eventual conclusão ou falha de uma operação assíncrona",
@@ -57,7 +57,7 @@ export const DATA_QUESTIONS = [
   },
   {
     questionID: 5,
-    question: "Qual a diferença entre null e undefined?",
+    questionDescription: "Qual a diferença entre null e undefined?",
     answerOptions: [
       "São exatamente a mesma coisa",
       "null é usado para números e undefined para strings",
@@ -68,7 +68,7 @@ export const DATA_QUESTIONS = [
   },
   {
     questionID: 6,
-    question: "O que é destructuring em JavaScript?",
+    questionDescription: "O que é destructuring em JavaScript?",
     answerOptions: [
       "Um método para deletar propriedades de objetos",
       "Uma forma de converter strings em arrays",
@@ -79,7 +79,7 @@ export const DATA_QUESTIONS = [
   },
   {
     questionID: 7,
-    question: "O que é um closure em JavaScript?",
+    questionDescription: "O que é um closure em JavaScript?",
     answerOptions: [
       "Uma função que tem acesso ao escopo externo mesmo após a função externa ter squestionIDo executada",
       "Uma função que fecha a aplicação",
@@ -90,7 +90,7 @@ export const DATA_QUESTIONS = [
   },
   {
     questionID: 8,
-    question: "Como funciona o Event Loop no JavaScript?",
+    questionDescription: "Como funciona o Event Loop no JavaScript?",
     answerOptions: [
       "É um loop infinito que executa todo o código JavaScript",
       "Monitora a Call Stack e Task Queue, executando tarefas da fila quando a stack está vazia, permitindo operações assíncronas em single-thread",
@@ -101,7 +101,7 @@ export const DATA_QUESTIONS = [
   },
   {
     questionID: 9,
-    question: "O que é hoisting em JavaScript?",
+    questionDescription: "O que é hoisting em JavaScript?",
     answerOptions: [
       "Uma técnica para otimizar performance de loops",
       "Um método para elevar elementos na DOM",

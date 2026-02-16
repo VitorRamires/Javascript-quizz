@@ -1,7 +1,7 @@
 import type { Dispatch, SetStateAction } from "react";
 
 export interface QuestionType {
-  question: string;
+  questionDescription: string;
   questionID: number;
   answerOptions: string[];
   correctAnswer: number;
@@ -11,7 +11,7 @@ export interface QuestionType {
 export interface AnswerInfo {
   choosedOption: number;
   isCorrect: boolean;
-  question: string;
+  question: number;
 }
 
 
@@ -20,6 +20,7 @@ export type AnswerType = Record<number, AnswerInfo>;
 export interface AnswerStorageContextType {
   answers: AnswerType;
   setAnswers: Dispatch<SetStateAction<AnswerType>>;
+  isCorrect: boolean
 }
 
 export interface BgInterface {

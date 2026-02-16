@@ -4,34 +4,33 @@ import { AnswerStorageContext } from "../utilities/context";
 
 export function Question({
   answerOptions,
-  question,
+  questionDescription,
   questionID,
   correctAnswer,
 }: QuestionType) {
   const { setAnswers } = useContext(AnswerStorageContext);
 
-  function handleAnswerResult(
-    selectedOption: number,
-    actualQuestion: number,
-    questionDescription: string,
-  ) {
+  function handleAnswerResult(selectedOption: number, actualQuestion: number) {
     setAnswers((prev) => ({
       ...prev,
       [actualQuestion]: {
         choosedOption: selectedOption,
         isCorrect: selectedOption === correctAnswer ? true : false,
-        question: questionDescription,
+        question: actualQuestion,
       },
     }));
   }
 
   return (
     <>
-      <h3>{question}</h3>
+      <h3>{questionDescription}</h3>
       {answerOptions.map((option, index) => (
-        <label key={index} className="option-label">
+        <label
+          key={index}
+          className={`option-label`}
+        >
           <input
-            onChange={() => handleAnswerResult(index, questionID, option)}
+            onChange={() => handleAnswerResult(index, questionID)}
             type="radio"
             value={option}
             name={`question-${questionID}`}
