@@ -1,6 +1,6 @@
 export const DATA_QUESTIONS = [
   {
-    id: 1,
+    id: 0,
     question: "O que é JavaScript?",
     options: [
       "Uma biblioteca de Java para desenvolvimento web",
@@ -11,7 +11,7 @@ export const DATA_QUESTIONS = [
     correctAnswer: 1,
   },
   {
-    id: 2,
+    id: 1,
     question: "Qual a diferença entre == e === em JavaScript?",
     options: [
       "Não há diferença, ambos fazem a mesma coisa",
@@ -22,7 +22,7 @@ export const DATA_QUESTIONS = [
     correctAnswer: 2,
   },
   {
-    id: 3,
+    id: 2,
     question: "Como declarar uma função em JavaScript?",
     options: [
       "func minhaFuncao() {}",
@@ -34,7 +34,7 @@ export const DATA_QUESTIONS = [
   },
 
   {
-    id: 4,
+    id: 3,
     question: "O que é o 'this' em JavaScript?",
     options: [
       "Uma referência ao contexto de execução atual, que depende de como a função foi chamada",
@@ -45,7 +45,7 @@ export const DATA_QUESTIONS = [
     correctAnswer: 0,
   },
   {
-    id: 5,
+    id: 4,
     question: "O que são Promises em JavaScript?",
     options: [
       "Funções que garantem a execução de código",
@@ -56,7 +56,7 @@ export const DATA_QUESTIONS = [
     correctAnswer: 1,
   },
   {
-    id: 6,
+    id: 5,
     question: "Qual a diferença entre null e undefined?",
     options: [
       "São exatamente a mesma coisa",
@@ -67,7 +67,7 @@ export const DATA_QUESTIONS = [
     correctAnswer: 2,
   },
   {
-    id: 7,
+    id: 6,
     question: "O que é destructuring em JavaScript?",
     options: [
       "Um método para deletar propriedades de objetos",
@@ -78,7 +78,7 @@ export const DATA_QUESTIONS = [
     correctAnswer: 3,
   },
   {
-    id: 8,
+    id: 7,
     question: "O que é um closure em JavaScript?",
     options: [
       "Uma função que tem acesso ao escopo externo mesmo após a função externa ter sido executada",
@@ -89,7 +89,7 @@ export const DATA_QUESTIONS = [
     correctAnswer: 0,
   },
   {
-    id: 9,
+    id: 8,
     question: "Como funciona o Event Loop no JavaScript?",
     options: [
       "É um loop infinito que executa todo o código JavaScript",
@@ -100,7 +100,7 @@ export const DATA_QUESTIONS = [
     correctAnswer: 1,
   },
   {
-    id: 10,
+    id: 9,
     question: "O que é hoisting em JavaScript?",
     options: [
       "Uma técnica para otimizar performance de loops",
