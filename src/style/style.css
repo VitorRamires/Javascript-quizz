@@ -4,6 +4,12 @@ body {
   padding: 0;
   height: 100%;
   width: 100%;
+  font-family: "Playrite";
+}
+
+@font-face {
+  font-family: "Playrite";
+  src: url("../assets/fonts/PlaywriteNZBasic-Regular.ttf");
 }
 
 #root {
@@ -12,4 +18,5 @@ body {
 
 button {
   margin-top: 10px;
+  font-family: "Playrite";
 }

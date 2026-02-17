@@ -37,6 +37,10 @@ export const QuestionStyled = styled.div`
     position: absolute;
   }
 
+  .option-label:hover{
+    background-color: rgb(255 166 32);
+  }
+
   .option-label:has(input[type="radio"]:checked) {
     background-color: rgb(255, 236, 69);
     color: rgb(48, 48, 48);
