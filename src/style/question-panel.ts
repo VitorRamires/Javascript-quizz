@@ -23,7 +23,7 @@ export const QuestionStyled = styled.div`
     display: block;
     width: 100%;
     background-color: #ffffff;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
     padding: 20px 0;
     text-align: center;
     cursor: pointer;
@@ -42,13 +42,15 @@ export const QuestionStyled = styled.div`
   }
 
   .option-correct {
-    background-color: #4caf50;
-    color: white;
+    background-color: #4caf50 !important;
+    color: white !important;
   }
 
   .option-wrong {
     background-color: red !important;
     color: white !important;
+    box-shadow: 1px 1px 5px 5px rgb(255 166 32);
+
   }
 
   .option-label:has(input[type="radio"]:checked) {

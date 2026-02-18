@@ -10,6 +10,9 @@ export interface QuestionType {
 export interface AnswerInfo {
   choosedOption: number;
   question: number;
+  isCorrect: boolean;
+  questionDescription: string;
+  answerText: string;
 }
 
 export type AnswerType = Record<number, AnswerInfo>;

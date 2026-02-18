@@ -3,11 +3,12 @@ import { QuestionCounterContext } from "../store/questionCounter";
 import { MainPainelStyled } from "../style/question-panel";
 import { Questions } from "./questions";
 import { AnswerStorageContext } from "../utilities/context";
+import { DATA_QUESTIONS } from "../data/dataQuestions";
+import { Status } from "./Status";
 
 export function MainPainel() {
   const questionCounter = useContext(QuestionCounterContext);
-  const { isAnswered, setIsAnswered } =
-    useContext(AnswerStorageContext);
+  const { isAnswered, setIsAnswered } = useContext(AnswerStorageContext);
 
   function handleQuestionProgression() {
     if (!isAnswered) {
@@ -18,11 +19,15 @@ export function MainPainel() {
     }
   }
 
+  const isFinished = (questionCounter?.questionCounter ?? 0) >= DATA_QUESTIONS.length;
+
   return (
     <MainPainelStyled>
       <h2>Javascript Quizz!</h2>
-      <Questions />
-      <button onClick={handleQuestionProgression}>Responder</button>
+      {isFinished ? <Status /> : <Questions />}
+      <button onClick={handleQuestionProgression}>
+        {isAnswered ? "Avançar" : "Responder"}
+      </button>
     </MainPainelStyled>
   );
 }

@@ -20,3 +20,11 @@ button {
   margin-top: 10px;
   font-family: "Playrite";
 }
+
+.correct {
+  color: forestgreen;
+}
+
+.incorrect {
+  color: red;
+}
