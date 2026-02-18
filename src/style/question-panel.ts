@@ -8,8 +8,8 @@ export const MainPainelStyled = styled.section`
   top: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  background-color: rgb(253, 216, 52);
-  box-shadow: 1px 1px 5px 0 black;
+  background-color: rgba(247, 181, 83, 0.9);
+  box-shadow: 1px 1px 5px 5px rgba(2, 2, 2, 0.267);
   padding: 20px;
 `;
 
@@ -38,7 +38,7 @@ export const QuestionStyled = styled.div`
   }
 
   .option-label:hover {
-    background-color: rgb(255 166 32);
+    background-color: rgb(253, 216, 52);
   }
 
   .option-correct {
