@@ -7,20 +7,18 @@ export interface QuestionType {
   correctAnswer: number;
 }
 
-
 export interface AnswerInfo {
   choosedOption: number;
-  isCorrect: boolean;
   question: number;
 }
-
 
 export type AnswerType = Record<number, AnswerInfo>;
 
 export interface AnswerStorageContextType {
   answers: AnswerType;
   setAnswers: Dispatch<SetStateAction<AnswerType>>;
-  isCorrect: boolean
+  isAnswered: boolean;
+  setIsAnswered: Dispatch<SetStateAction<boolean>>;
 }
 
 export interface BgInterface {

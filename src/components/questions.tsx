@@ -8,6 +8,7 @@ import { Question } from "./question";
 export function Questions() {
   const questionCounter = useContext(QuestionCounterContext);
 
+
   return (
     <QuestionBoardStyled>
       {DATA_QUESTIONS.map(

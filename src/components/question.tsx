@@ -8,7 +8,7 @@ export function Question({
   questionID,
   correctAnswer,
 }: QuestionType) {
-  const { setAnswers } = useContext(AnswerStorageContext);
+  const { answers, setAnswers, isAnswered } = useContext(AnswerStorageContext);
 
   function handleAnswerResult(selectedOption: number, actualQuestion: number) {
     setAnswers((prev) => ({
@@ -21,14 +21,20 @@ export function Question({
     }));
   }
 
+  const currentAnswer = answers[questionID];
+
+  function getOptionClass(index: number): string {
+    if (!isAnswered) return "";
+    if (index === correctAnswer) return "option-correct"; 
+    if (currentAnswer?.choosedOption === index) return "option-wrong";
+    return "";
+  }
+
   return (
     <>
       <h3>{questionDescription}</h3>
       {answerOptions.map((option, index) => (
-        <label
-          key={index}
-          className={`option-label`}
-        >
+        <label key={index} className={`option-label ${getOptionClass(index)}`}>
           <input
             onChange={() => handleAnswerResult(index, questionID)}
             type="radio"

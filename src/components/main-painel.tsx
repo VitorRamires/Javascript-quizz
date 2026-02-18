@@ -6,20 +6,16 @@ import { AnswerStorageContext } from "../utilities/context";
 
 export function MainPainel() {
   const questionCounter = useContext(QuestionCounterContext);
-  const { answers, setIsCorrect, isCorrect } = useContext(AnswerStorageContext);
+  const { isAnswered, setIsAnswered } =
+    useContext(AnswerStorageContext);
 
   function handleQuestionProgression() {
-    console.log(answers);
-    const currentQuestion = questionCounter?.questionCounter;
-
-    if (currentQuestion !== undefined) {
-      const currentAnswer = answers[currentQuestion];
-      setIsCorrect(currentAnswer.isCorrect);
-      console.log(isCorrect)
-
+    if (!isAnswered) {
+      setIsAnswered(true);
+    } else {
+      setIsAnswered(false);
+      questionCounter?.setQuestionCounter((prev) => prev + 1);
     }
-
-    questionCounter?.setQuestionCounter((prevQuestion) => prevQuestion + 1);
   }
 
   return (

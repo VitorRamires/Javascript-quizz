@@ -5,9 +5,14 @@ import type { AnswerType } from "../types/types";
 
 export function AnswerStorageProvider({ children }: { children: ReactNode }) {
   const [answers, setAnswers] = useState<AnswerType>({});
-  const [isCorrect, setIsCorrect] = useState(false);
+  const [isAnswered, setIsAnswered] = useState(false);
 
-  const value = { answers, setAnswers, isCorrect, setIsCorrect };
+  const value = {
+    answers,
+    isAnswered,
+    setAnswers,
+    setIsAnswered,
+  };
 
   return (
     <AnswerStorageContext.Provider value={value}>
