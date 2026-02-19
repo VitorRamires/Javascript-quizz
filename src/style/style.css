@@ -7,6 +7,12 @@ body {
   font-family: "Playrite";
 }
 
+body {
+  background-image: url("../assets//yellow-bg.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
 @font-face {
   font-family: "Playrite";
   src: url("../assets/fonts/PlaywriteNZBasic-Regular.ttf");

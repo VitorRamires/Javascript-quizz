@@ -4,29 +4,36 @@ import { MainPainelStyled } from "../style/question-panel";
 import { Questions } from "./questions";
 import { AnswerStorageContext } from "../utilities/context";
 import { DATA_QUESTIONS } from "../data/dataQuestions";
-import { Status } from "./Status";
+import { Status } from "./status";
 
 export function MainPainel() {
   const questionCounter = useContext(QuestionCounterContext);
   const { isAnswered, setIsAnswered } = useContext(AnswerStorageContext);
+  const isFinished =
+    (questionCounter?.questionCounter ?? 0) >= DATA_QUESTIONS.length;
 
   function handleQuestionProgression() {
+    if (isFinished) {
+      questionCounter?.setQuestionCounter(0);
+      setIsAnswered(false);
+      return;
+    }
+
     if (!isAnswered) {
       setIsAnswered(true);
     } else {
-      setIsAnswered(false);
       questionCounter?.setQuestionCounter((prev) => prev + 1);
+      setIsAnswered(false);
+      return;
     }
   }
-
-  const isFinished = (questionCounter?.questionCounter ?? 0) >= DATA_QUESTIONS.length;
 
   return (
     <MainPainelStyled>
       <h2>Javascript Quizz!</h2>
       {isFinished ? <Status /> : <Questions />}
       <button onClick={handleQuestionProgression}>
-        {isAnswered ? "Avançar" : "Responder"}
+        {isFinished ? "Recomeçar" : isAnswered ? "Avançar" : "Responder"}
       </button>
     </MainPainelStyled>
   );
