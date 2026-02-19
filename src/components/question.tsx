@@ -38,7 +38,7 @@ export function Question({
 
   return (
     <>
-      <h3>{questionDescription}</h3>
+      <h3><span>Questão {questionID + 1}:</span>{questionDescription}</h3>
       {answerOptions.map((option, index) => (
         <label key={index} className={`option-label ${getOptionClass(index)}`}>
           <input

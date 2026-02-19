@@ -5,10 +5,32 @@ export const MainPainelStyled = styled.section`
   max-width: 90%;
   position: relative;
   text-align: center;
-  background-color: rgba(247, 181, 83, 0.9);
+  background-color: rgba(247, 181, 83, 0.2);
   box-shadow: 1px 1px 5px 5px rgba(2, 2, 2, 0.267);
   padding: 20px;
-  margin: 4.5rem auto;
+  margin: 5rem auto;
+  border-radius: 10px;
+
+  h1 {
+    margin: 35px;
+  }
+
+  button {
+    width: 150px;
+    max-width: 100%;
+    padding: 10px 0;
+    border-radius: 2px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-color: rgb(255, 157, 10);
+    font-weight: bold;
+    transition: all 0.2s;
+  }
+
+  button:hover {
+    background-color: rgba(247, 181, 83, 1);
+  }
 `;
 
 export const QuestionBoardStyled = styled.div`
@@ -47,7 +69,7 @@ export const QuestionStyled = styled.div`
   .option-wrong {
     background-color: red !important;
     color: white !important;
-    box-shadow: 1px 1px 5px 5px rgb(255 166 32);
+    box-shadow: 1px 1px 0px 5px rgb(255 166 32);
   }
 
   .option-label:has(input[type="radio"]:checked) {
@@ -61,5 +83,9 @@ export const QuestionStyled = styled.div`
 
   &.question-active {
     display: block;
+  }
+
+  span {
+    margin-right: 12px;
   }
 `;

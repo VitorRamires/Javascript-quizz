@@ -30,7 +30,7 @@ export function MainPainel() {
 
   return (
     <MainPainelStyled>
-      <h2>Javascript Quizz!</h2>
+      <h1>Javascript Quizz!</h1>
       {isFinished ? <Status /> : <Questions />}
       <button onClick={handleQuestionProgression}>
         {isFinished ? "Recomeçar" : isAnswered ? "Avançar" : "Responder"}
