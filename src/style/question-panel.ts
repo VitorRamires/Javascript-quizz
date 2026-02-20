@@ -77,14 +77,6 @@ export const QuestionStyled = styled.div`
     color: rgb(48, 48, 48);
   }
 
-  &.question-desactive {
-    display: none;
-  }
-
-  &.question-active {
-    display: block;
-  }
-
   span {
     margin-right: 12px;
   }

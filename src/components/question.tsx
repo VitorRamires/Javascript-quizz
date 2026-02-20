@@ -8,23 +8,11 @@ export function Question({
   questionID,
   correctAnswer,
 }: QuestionType) {
-  const { answers, setAnswers, isAnswered } = useContext(AnswerStorageContext);
+  const { answers, isAnswered, saveAnswer } = useContext(AnswerStorageContext);
 
-  function handleAnswerResult(
-    selectedOption: number,
-    actualQuestion: number,
-    answerText: string,
-  ) {
-    setAnswers((prev) => ({
-      ...prev,
-      [actualQuestion]: {
-        choosedOption: selectedOption,
-        isCorrect: selectedOption === correctAnswer ? true : false,
-        question: actualQuestion,
-        answerText: answerText,
-        questionDescription: questionDescription,
-      },
-    }));
+  function handleAnswerResult(selectedOption: number,actualQuestion: number,answerText: string,) {
+    const isCorrect = selectedOption === correctAnswer ? true : false
+    saveAnswer(actualQuestion, selectedOption, isCorrect, answerText, questionDescription)
   }
 
   const currentAnswer = answers[questionID];
@@ -38,7 +26,10 @@ export function Question({
 
   return (
     <>
-      <h3><span>Questão {questionID + 1}:</span>{questionDescription}</h3>
+      <h3>
+        <span>Questão {questionID + 1}:</span>
+        {questionDescription}
+      </h3>
       {answerOptions.map((option, index) => (
         <label key={index} className={`option-label ${getOptionClass(index)}`}>
           <input

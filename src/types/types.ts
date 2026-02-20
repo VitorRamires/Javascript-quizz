@@ -13,6 +13,7 @@ export interface AnswerInfo {
   isCorrect: boolean;
   questionDescription: string;
   answerText: string;
+  skipped: boolean
 }
 
 export type AnswerType = Record<number, AnswerInfo>;

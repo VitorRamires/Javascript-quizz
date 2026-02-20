@@ -7,13 +7,14 @@ export function Status() {
   const { answers } = useContext(AnswerStorageContext);
 
   const myAnswers = Object.values(answers);
+
   const correctAnswers = myAnswers.filter((answer) => answer.isCorrect).length;
   const wrongAnswers = myAnswers.filter((answer) => !answer.isCorrect).length;
+  const skipped = myAnswers.filter((answer) => answer.skipped).length;
 
   const percentCorrectAnswers = (100 * correctAnswers) / DATA_QUESTIONS.length;
   const percentWrongAnwers = (100 * wrongAnswers) / DATA_QUESTIONS.length;
-
-  console.log(answers);
+  const percentSkipped = (100 * skipped) / DATA_QUESTIONS.length;
 
   return (
     <StatisticStyled>
@@ -21,13 +22,16 @@ export function Status() {
       <div className="statistic-header">
         <h3 className="correct">Questões corretas: {percentCorrectAnswers}%</h3>
         <h3 className="incorrect">Questões erradas: {percentWrongAnwers}%</h3>
+        <h3 className="skipped">Questões puladas: {percentSkipped}%</h3>
       </div>
       {myAnswers.map((question) => (
         <div className="log">
           <p>{question.questionDescription}</p>
+
           <p className={question.isCorrect ? "correct" : "incorrect"}>
             {question.answerText}
           </p>
+          {question.skipped ? <h4>Não respondida</h4> : ""}
         </div>
       ))}
     </StatisticStyled>

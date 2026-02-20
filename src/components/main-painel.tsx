@@ -8,7 +8,8 @@ import { Status } from "./status";
 
 export function MainPainel() {
   const questionCounter = useContext(QuestionCounterContext);
-  const { isAnswered, setIsAnswered } = useContext(AnswerStorageContext);
+  const { isAnswered, setIsAnswered, saveAnswer, answers } =
+    useContext(AnswerStorageContext);
   const isFinished =
     (questionCounter?.questionCounter ?? 0) >= DATA_QUESTIONS.length;
 
@@ -20,12 +21,28 @@ export function MainPainel() {
     }
 
     if (!isAnswered) {
+      const currentQuestion = questionCounter?.questionCounter ?? 0;
+      const { questionDescription, answerOptions, correctAnswer } =
+        DATA_QUESTIONS[currentQuestion];
+
+      if (!answers[currentQuestion]) {
+        saveAnswer(
+          currentQuestion,
+          null,
+          false,
+          answerOptions[correctAnswer],
+          questionDescription,
+          true,
+        );
+      }
+
       setIsAnswered(true);
-    } else {
-      questionCounter?.setQuestionCounter((prev) => prev + 1);
-      setIsAnswered(false);
       return;
     }
+
+    questionCounter?.setQuestionCounter((prev) => prev + 1);
+    setIsAnswered(false);
+    return;
   }
 
   return (
