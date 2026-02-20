@@ -49,7 +49,6 @@ export function Question({
             name={`question-${questionID}`}
             disabled={isAnswered}
           />
-
           {option}
         </label>
       ))}

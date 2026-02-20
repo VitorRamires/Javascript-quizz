@@ -8,48 +8,47 @@ import { Status } from "./status";
 
 export function MainPainel() {
   const questionCounter = useContext(QuestionCounterContext);
-  const { isAnswered, setIsAnswered, saveAnswer, answers } =
-    useContext(AnswerStorageContext);
-  const isFinished =
-    (questionCounter?.questionCounter ?? 0) >= DATA_QUESTIONS.length;
+  const { isAnswered, setIsAnswered, saveAnswer, answers } = useContext(AnswerStorageContext);
+  const currentQuestion = questionCounter?.questionCounter ?? 0;
+  const isFinished = currentQuestion >= DATA_QUESTIONS.length;
 
-  function handleQuestionProgression() {
-    if (isFinished) {
-      questionCounter?.setQuestionCounter(0);
-      setIsAnswered(false);
-      return;
+  function saveSkippedAnswer() {
+    const { questionDescription, answerOptions, correctAnswer } = DATA_QUESTIONS[currentQuestion];
+    if (!answers[currentQuestion]) {
+      saveAnswer(currentQuestion, -1, false, answerOptions[correctAnswer], questionDescription, true);
     }
+  }
 
-    if (!isAnswered) {
-      const currentQuestion = questionCounter?.questionCounter ?? 0;
-      const { questionDescription, answerOptions, correctAnswer } =
-        DATA_QUESTIONS[currentQuestion];
+  function handleAnswer() {
+    saveSkippedAnswer();
+    setIsAnswered(true);
+  }
 
-      if (!answers[currentQuestion]) {
-        saveAnswer(
-          currentQuestion,
-          -1,
-          false,
-          answerOptions[correctAnswer],
-          questionDescription,
-          true,
-        );
-      }
-
-      setIsAnswered(true);
-      return;
-    }
-
+  function handleAdvance() {
     questionCounter?.setQuestionCounter((prev) => prev + 1);
     setIsAnswered(false);
-    return;
+  }
+
+  function handleRestart() {
+    questionCounter?.setQuestionCounter(0);
+    setIsAnswered(false);
+  }
+
+  function handleButtonClick() {
+    if (isFinished) return handleRestart();
+    if (isAnswered) return handleAdvance();
+    handleAnswer();
   }
 
   return (
     <MainPainelStyled>
       <h1>Javascript Quizz!</h1>
-      {isFinished ? <Status /> : <Questions />}
-      <button onClick={handleQuestionProgression}>
+      {isFinished ? (
+        <Status />
+      ) : (
+        <Questions onTimeout={handleAnswer} />
+      )}
+      <button onClick={handleButtonClick}>
         {isFinished ? "Recomeçar" : isAnswered ? "Avançar" : "Responder"}
       </button>
     </MainPainelStyled>
