@@ -8,21 +8,28 @@ export interface QuestionType {
 }
 
 export interface AnswerInfo {
-  choosedOption: number;
+  chosenOption: number;
   question: number;
   isCorrect: boolean;
   questionDescription: string;
   answerText: string;
-  skipped: boolean
+  skipped: boolean;
 }
 
 export type AnswerType = Record<number, AnswerInfo>;
 
 export interface AnswerStorageContextType {
   answers: AnswerType;
-  setAnswers: Dispatch<SetStateAction<AnswerType>>;
   isAnswered: boolean;
   setIsAnswered: Dispatch<SetStateAction<boolean>>;
+  saveAnswer: (
+    actualQuestion: number,
+    selectedOption: number,
+    isCorrect: boolean,
+    answerText: string,
+    questionDescription: string,
+    skipped?: boolean,
+  ) => void;
 }
 
 export interface BgInterface {

@@ -10,6 +10,9 @@ export const StatisticStyled = styled.div`
   }
 
   .log {
-    margin-top: 50px;
+    margin-top: 25px;
+    background: linear-gradient(90deg, #ffc47b, #ffa857);
+    padding: 5px 2px;
+    border-radius: 5px;
   }
 `;

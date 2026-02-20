@@ -1,8 +1,6 @@
 import { createContext, useState } from "react";
 import type { ReactNode } from "react";
 
-// extraindo tipo da função com ReturnType e indicando a função que queremos isto
-// com typeof
 const QuestionCounterContext = createContext<
   ReturnType<typeof useQuestionCounterState> | undefined
 >(undefined);

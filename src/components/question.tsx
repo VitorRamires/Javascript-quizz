@@ -10,9 +10,19 @@ export function Question({
 }: QuestionType) {
   const { answers, isAnswered, saveAnswer } = useContext(AnswerStorageContext);
 
-  function handleAnswerResult(selectedOption: number,actualQuestion: number,answerText: string,) {
-    const isCorrect = selectedOption === correctAnswer ? true : false
-    saveAnswer(actualQuestion, selectedOption, isCorrect, answerText, questionDescription)
+  function handleAnswerResult(
+    selectedOption: number,
+    actualQuestion: number,
+    answerText: string,
+  ) {
+    const isCorrect = selectedOption === correctAnswer;
+    saveAnswer(
+      actualQuestion,
+      selectedOption,
+      isCorrect,
+      answerText,
+      questionDescription,
+    );
   }
 
   const currentAnswer = answers[questionID];
@@ -20,7 +30,7 @@ export function Question({
   function getOptionClass(index: number): string {
     if (!isAnswered) return "";
     if (index === correctAnswer) return "option-correct";
-    if (currentAnswer?.choosedOption === index) return "option-wrong";
+    if (currentAnswer?.chosenOption === index) return "option-wrong";
     return "";
   }
 
@@ -31,7 +41,7 @@ export function Question({
         {questionDescription}
       </h3>
       {answerOptions.map((option, index) => (
-        <label key={index} className={`option-label ${getOptionClass(index)}`}>
+        <label key={option} className={`option-label ${getOptionClass(index)}`}>
           <input
             onChange={() => handleAnswerResult(index, questionID, option)}
             type="radio"

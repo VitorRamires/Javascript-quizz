@@ -26,6 +26,7 @@ export const MainPainelStyled = styled.section`
     background-color: rgb(255, 157, 10);
     font-weight: bold;
     transition: all 0.2s;
+    margin-top: 35px;
   }
 
   button:hover {
@@ -58,7 +59,7 @@ export const QuestionStyled = styled.div`
   }
 
   .option-label:hover {
-    background-color: rgb(253, 216, 52);
+    background-color: rgb(255 192 82);
   }
 
   .option-correct {

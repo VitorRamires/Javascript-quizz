@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState } from "react";
 import type { ReactNode } from "react";
 import { AnswerStorageContext } from "../utilities/context";
 import type { AnswerType } from "../types/types";
@@ -18,7 +18,7 @@ export function AnswerStorageProvider({ children }: { children: ReactNode }) {
     setAnswers((prev) => ({
       ...prev,
       [actualQuestion]: {
-        choosedOption: selectedOption,
+        chosenOption: selectedOption,
         isCorrect,
         question: actualQuestion,
         answerText,
@@ -28,10 +28,7 @@ export function AnswerStorageProvider({ children }: { children: ReactNode }) {
     }));
   }
 
-  const value = useMemo(
-    () => ({ answers, setAnswers, isAnswered, setIsAnswered, saveAnswer }),
-    [answers, isAnswered],
-  );
+  const value = { answers, isAnswered, setIsAnswered, saveAnswer };
 
   return (
     <AnswerStorageContext.Provider value={value}>

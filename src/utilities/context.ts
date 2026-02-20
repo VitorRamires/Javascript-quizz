@@ -3,5 +3,7 @@ import type { AnswerStorageContextType } from "../types/types";
 
 export const AnswerStorageContext = createContext<AnswerStorageContextType>({
   answers: {},
-  setAnswers: () => {},
+  isAnswered: false,
+  setIsAnswered: () => {},
+  saveAnswer: () => {},
 });

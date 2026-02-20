@@ -28,7 +28,7 @@ export function MainPainel() {
       if (!answers[currentQuestion]) {
         saveAnswer(
           currentQuestion,
-          null,
+          -1,
           false,
           answerOptions[correctAnswer],
           questionDescription,

@@ -13,7 +13,7 @@ export function Status() {
   const skipped = myAnswers.filter((answer) => answer.skipped).length;
 
   const percentCorrectAnswers = (100 * correctAnswers) / DATA_QUESTIONS.length;
-  const percentWrongAnwers = (100 * wrongAnswers) / DATA_QUESTIONS.length;
+  const percentWrongAnwsers = (100 * wrongAnswers) / DATA_QUESTIONS.length;
   const percentSkipped = (100 * skipped) / DATA_QUESTIONS.length;
 
   return (
@@ -21,11 +21,11 @@ export function Status() {
       <h2>QUIZZ COMPLETED!</h2>
       <div className="statistic-header">
         <h3 className="correct">Questões corretas: {percentCorrectAnswers}%</h3>
-        <h3 className="incorrect">Questões erradas: {percentWrongAnwers}%</h3>
+        <h3 className="incorrect">Questões erradas: {percentWrongAnwsers}%</h3>
         <h3 className="skipped">Questões puladas: {percentSkipped}%</h3>
       </div>
       {myAnswers.map((question) => (
-        <div className="log">
+        <div className="log" key={question.question}>
           <p>{question.questionDescription}</p>
 
           <p className={question.isCorrect ? "correct" : "incorrect"}>
