@@ -19,7 +19,7 @@ export function MainPainel() {
     }
   }
 
-  function handleAnswer() {
+  const handleAnswer =  function handleAnswer() {
     saveSkippedAnswer();
     setIsAnswered(true);
   }
@@ -46,7 +46,7 @@ export function MainPainel() {
       {isFinished ? (
         <Status />
       ) : (
-        <Questions onTimeout={handleAnswer} />
+        <Questions onTimeout={handleAnswer} key={currentQuestion} />
       )}
       <button onClick={handleButtonClick}>
         {isFinished ? "Recomeçar" : isAnswered ? "Avançar" : "Responder"}

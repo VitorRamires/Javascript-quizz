@@ -38,3 +38,32 @@ button {
 .incorrect {
   color: red;
 }
+
+/* Progress bar */
+
+progress {
+  appearance: none;
+  width: 100%;
+  height: 8px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+/* fundo da barra */
+progress::-webkit-progress-bar {
+  background: #e0e0e0;
+  border-radius: 4px;
+}
+
+/* barra de progresso */
+progress::-webkit-progress-value {
+  background: #a74b00;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+/* firefox */
+progress::-moz-progress-bar {
+  background: #a74b00;
+  border-radius: 4px;
+}
