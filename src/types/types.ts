@@ -30,6 +30,7 @@ export interface AnswerStorageContextType {
     questionDescription: string,
     skipped?: boolean,
   ) => void;
+  saveSkippedAnswer : () => void
 }
 
 export interface BgInterface {

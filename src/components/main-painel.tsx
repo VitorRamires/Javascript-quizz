@@ -8,18 +8,12 @@ import { Status } from "./status";
 
 export function MainPainel() {
   const questionCounter = useContext(QuestionCounterContext);
-  const { isAnswered, setIsAnswered, saveAnswer, answers } = useContext(AnswerStorageContext);
+  const { isAnswered, setIsAnswered, saveSkippedAnswer } =
+    useContext(AnswerStorageContext);
   const currentQuestion = questionCounter?.questionCounter ?? 0;
   const isFinished = currentQuestion >= DATA_QUESTIONS.length;
 
-  function saveSkippedAnswer() {
-    const { questionDescription, answerOptions, correctAnswer } = DATA_QUESTIONS[currentQuestion];
-    if (!answers[currentQuestion]) {
-      saveAnswer(currentQuestion, -1, false, answerOptions[correctAnswer], questionDescription, true);
-    }
-  }
-
-  const handleAnswer =  function handleAnswer() {
+  function handleAnswer() {
     saveSkippedAnswer();
     setIsAnswered(true);
   }
