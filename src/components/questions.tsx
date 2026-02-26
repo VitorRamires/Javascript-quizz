@@ -25,7 +25,7 @@ export function Questions({ onTimeout }: { onTimeout: () => void }) {
       setTimer((time) => time + 1);
     }, 1000);
 
-    const timeout = setTimeout(() => onTimeoutRef.current(), 15000);
+    const timeout = setTimeout(() => onTimeoutRef.current(), 7000);
 
     return () => {
       clearInterval(interval);
@@ -50,7 +50,7 @@ export function Questions({ onTimeout }: { onTimeout: () => void }) {
           answerOptions={answerOptions}
           correctAnswer={correctAnswer}
         />
-        <progress value={timer} max={15}></progress>
+        <progress value={timer} max={7}></progress>
       </QuestionStyled>
     </QuestionBoardStyled>
   );

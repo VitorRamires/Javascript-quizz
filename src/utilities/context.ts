@@ -6,4 +6,5 @@ export const AnswerStorageContext = createContext<AnswerStorageContextType>({
   isAnswered: false,
   setIsAnswered: () => {},
   saveAnswer: () => {},
+  saveSkippedAnswer: () => {},
 });

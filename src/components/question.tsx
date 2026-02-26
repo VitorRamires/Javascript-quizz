@@ -26,13 +26,13 @@ export function Question({
   }
 
   const currentAnswer = answers[questionID];
-  
-function getOptionClass(index: number): string {
-  if (!isAnswered) return "";
-  if (index === correctAnswer) return "option-correct";
-  if (currentAnswer?.chosenOption === index) return "option-wrong";
-  return "";
-}
+
+  function getOptionClass(index: number): string {
+    if (!isAnswered) return "";
+    if (index === correctAnswer) return "option-correct";
+    if (currentAnswer?.chosenOption === index) return "option-wrong";
+    return "";
+  }
 
   return (
     <>
