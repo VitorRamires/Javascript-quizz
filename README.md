@@ -5,7 +5,7 @@ Este projeto foi criado com o objetivo de testar e consolidar conhecimentos em J
 <br />
 <h3>🛠️ Construído com:</h3>
 <ul>
-<li>Typescript - linguagem base do projeto</li>
+<li>Javascript - linguagem base do projeto</li>
 <li>React.js - Framework</li>
 </ul>
 <br />
